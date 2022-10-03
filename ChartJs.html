@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <div>
+    <div style="position: relative; height:40vh; width:40vw; display:flex;">
         <canvas id="myChart"></canvas>
+        <canvas id="myChart2"></canvas>
 
     </div>
 
@@ -53,6 +54,46 @@
     const myChart = new Chart(
         document.getElementById('myChart'),
         config
+    );
+</script>
+<script>
+    const labels2 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [22, 24, 27, 23, 20, 18],
+        },
+        {
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [90, 89, 93, 87, 88, 82],
+        }
+    ]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
     );
 </script>
 
